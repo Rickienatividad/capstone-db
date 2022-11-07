@@ -52,3 +52,6 @@ Content-Type: application/json
   "notes": "shit day",
   "date": 20210102
 }
+
+### Entries Destroy
+DELETE http://localhost:3000/entries/8.json

@@ -42,4 +42,11 @@ class EntriesController < ApplicationController
       render json: { error: entry.errors.full_messages }
     end
   end
+
+  def destroy
+    entry = Entry.find_by(id: params["id"])
+
+    entry.delete
+    render json: { message: "entry deleted" }
+  end
 end
