@@ -39,3 +39,16 @@ Content-Type: application/json
   "notes": "nothing to note",
   "date": 20210101
 }
+
+### Entries Update
+PATCH http://localhost:3000/entries/8.json 
+Content-Type: application/json
+
+{
+  "user_id": 2,
+  "lure_id": 2,
+  "location": "river",
+  "weather": "rainy",
+  "notes": "shit day",
+  "date": 20210102
+}

@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   get "/entries" => "entries#index"
   get "/entries/:id" => "entries#show"
   post "/entries" => "entries#create"
+  patch "/entries/:id" => "entries#update"
 end
