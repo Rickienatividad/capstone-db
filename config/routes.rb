@@ -5,4 +5,9 @@ Rails.application.routes.draw do
 
   #sessions
   post "/sessions" => "sessions#create"
+
+  #entry
+  get "/entries" => "entries#index"
+  get "/entries/:id" => "entries#show"
+  post "/entries" => "entries#create"
 end

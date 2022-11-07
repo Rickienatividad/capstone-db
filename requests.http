@@ -19,3 +19,23 @@ Content-Type: application/json
   "email": "test@test.com",
   "password": "password"
 }
+
+###Entries
+### Entries Index
+GET http://localhost:3000/entries.json 
+
+### Entries Show
+GET http://localhost:3000/entries/1.json
+
+### Entries Post
+POST http://localhost:3000/entries.json 
+Content-Type: application/json
+
+{
+  "user_id": 1,
+  "lure_id": 1,
+  "location": "lake",
+  "weather": "sunny",
+  "notes": "nothing to note",
+  "date": 20210101
+}
