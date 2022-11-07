@@ -19,4 +19,11 @@ Rails.application.routes.draw do
   post "/fishes" => "fishes#create"
   patch "/fishes/:id" => "fishes#update"
   delete "/fishes/:id" => "fishes#destroy"
+
+  #lures
+  get "/lures" => "lures#index"
+  get "/lures/:id" => "lures#show"
+  post "/lures" => "lures#create"
+  patch "/lures" => "lures#update"
+  delete "/lures" => "lures#destroy"
 end

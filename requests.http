@@ -86,3 +86,22 @@ Content-Type: application/json
 
 ### Fish Destroy
 DELETE http://localhost:3000/fishes/2.json 
+
+### LURES
+
+### Lure Index
+GET http://localhost:3000/lures.json 
+
+### Lure Show
+GET http://localhost:3000/lures/1.json 
+
+### Lure Create
+POST http://localhost:3000/lures.json 
+Content-Type: application/json
+
+{
+  "entry_id": 1,
+  "user_id": 2,
+  "name": "rooster tail",
+  "color": "yellow"
+}
