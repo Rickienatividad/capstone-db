@@ -55,3 +55,34 @@ Content-Type: application/json
 
 ### Entries Destroy
 DELETE http://localhost:3000/entries/8.json
+
+### FISH
+### Fish Index
+GET http://localhost:3000/fishes.json
+
+### Fish Show
+GET http://localhost:3000/fishes/1.json 
+
+### Fish Create
+POST http://localhost:3000/fishes.json 
+Content-Type: application/json
+
+{
+  "entry_id": 1,
+  "user_id": 1,
+  "lure_id": 1,
+  "species": "shark",
+  "length": 7,
+  "weight": 2
+}
+
+### Fish Update
+PATCH http://localhost:3000/fishes/1.json 
+Content-Type: application/json
+
+{
+  "species": "red breast"
+}
+
+### Fish Destroy
+DELETE http://localhost:3000/fishes/2.json 
