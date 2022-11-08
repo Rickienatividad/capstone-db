@@ -32,4 +32,14 @@ class LuresController < ApplicationController
       render json: { error: lure.errors.full_messages }
     end
   end
+
+  def destroy
+    lure = Lure.find_by(id: params[:id])
+    if current_user && current_user.id == lure.user_id
+      lure.destroy
+      render json: { message: "lure deleted." }
+    else
+      render json: { message: "not authorized." }, status: :unauthorized
+    end
+  end
 end

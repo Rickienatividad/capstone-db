@@ -118,3 +118,7 @@ Content-Type: application/json
   "name": "beetlespin",
   "color": "black"
 }
+
+### Lure Destroy
+DELETE http://localhost:3000/lures/2.json 
+Authorization: Bearer {{jwt}}

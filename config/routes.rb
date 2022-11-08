@@ -25,5 +25,5 @@ Rails.application.routes.draw do
   get "/lures/:id" => "lures#show"
   post "/lures" => "lures#create"
   patch "/lures" => "lures#update"
-  delete "/lures" => "lures#destroy"
+  delete "/lures/:id" => "lures#destroy"
 end
