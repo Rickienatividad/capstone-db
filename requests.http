@@ -105,7 +105,8 @@ GET http://localhost:3000/lures.json
 Authorization: Bearer {{jwt2}}
 
 ### Lure Show
-GET http://localhost:3000/lures/1.json 
+GET http://localhost:3000/lures/2.json 
+Authorization: Bearer {{jwt}}
 
 ### Lure Create
 POST http://localhost:3000/lures.json 

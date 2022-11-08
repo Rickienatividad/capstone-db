@@ -12,8 +12,11 @@ class LuresController < ApplicationController
 
   def show
     lure = Lure.find_by(id: params[:id])
-
-    render json: lure.as_json
+    if current_user && current_user.id == lure.user_id
+      render json: lure.as_json
+    else
+      render json: { message: "not authorized" }, status: :unauthorized
+    end
   end
 
   def create
