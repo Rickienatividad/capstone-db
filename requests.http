@@ -62,6 +62,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjgwMTcwM
 ### FISH
 ### Fish Index
 GET http://localhost:3000/fishes.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NjgwMTY2Mzh9.FKJ8YjQFPWvecj1ucqrbm2LCIzrrcHDg6jqt5EZQXlA
 
 ### Fish Show
 GET http://localhost:3000/fishes/1.json 

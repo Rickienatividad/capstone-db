@@ -1,9 +1,13 @@
 class FishesController < ApplicationController
-  before
+  before_action :authenticate_user
 
   def index
-    fish = Fish.all
-    render json: fish.as_json
+    if current_user
+      fish = current_user.fish
+      render json: fish.as_json
+    else
+      render json: { message: "You aren't authorized to view this fish's info." }
+    end
   end
 
   def show
