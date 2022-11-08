@@ -1,7 +1,7 @@
 ### Users
 ### User Create
 POST http://localhost:3000/users.json 
-Content-Type: application/json
+Content-Type: application/json 
 
 {
   "name": "test2",
@@ -16,24 +16,25 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "test@test.com",
+  "email": "test2@test.com",
   "password": "password"
 }
 
 ###Entries
 ### Entries Index
 GET http://localhost:3000/entries.json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjgwMTcwMDB9.PgO5n6osqfzFGP1mcHKsgA78B5yEfZ1-xId2YM4_G58
 
 ### Entries Show
 GET http://localhost:3000/entries/1.json
 
 ### Entries Post
 POST http://localhost:3000/entries.json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjgwMTcwMDB9.PgO5n6osqfzFGP1mcHKsgA78B5yEfZ1-xId2YM4_G58
 Content-Type: application/json
 
 {
   "user_id": 1,
-  "lure_id": 1,
   "location": "lake",
   "weather": "sunny",
   "notes": "nothing to note",

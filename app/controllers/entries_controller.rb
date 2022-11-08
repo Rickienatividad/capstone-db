@@ -1,10 +1,14 @@
 class EntriesController < ApplicationController
-  before_action :authenticate_user, except: [:index]
+  before_action :authenticate_user
 
   def index
-    entries = Entry.all
+    if current_user
+      entries = current_user.entries
 
-    render json: entries.as_json
+      render json: entries.as_json
+    else
+      render json: { message: "You can only view your own entries." }
+    end
   end
 
   def show
@@ -19,7 +23,6 @@ class EntriesController < ApplicationController
   def create
     entry = Entry.new(
       user_id: params[:user_id],
-      lure_id: params[:lure_id],
       location: params[:location],
       weather: params[:weather],
       notes: params[:notes],
@@ -36,7 +39,6 @@ class EntriesController < ApplicationController
     entry = Entry.find_by(id: params[:id])
     if current_user && current_user.id == entry.user_id
       entry.user_id = params[:user_id] || entry.user_id
-      entry.lure_ids = params[:lure_ids] || entry.lure_ids
       entry.location = params[:location] || entry.location
       entry.weather = params[:weather] || entry.weather
       entry.notes = params[:notes] || entry.notes
