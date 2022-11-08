@@ -12,7 +12,11 @@ class FishesController < ApplicationController
 
   def show
     fish = Fish.find_by(id: params[:id])
-    render json: fish.as_json
+    if current_user && current_user.id == fish.user_id
+      render json: fish.as_json
+    else
+      render json: { message: "You aren't authorized to view this info." }, status: :unauthorized
+    end
   end
 
   def create

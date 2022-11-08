@@ -65,7 +65,8 @@ GET http://localhost:3000/fishes.json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NjgwMTY2Mzh9.FKJ8YjQFPWvecj1ucqrbm2LCIzrrcHDg6jqt5EZQXlA
 
 ### Fish Show
-GET http://localhost:3000/fishes/1.json 
+GET http://localhost:3000/fishes/3.json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjgwMTcwMDB9.PgO5n6osqfzFGP1mcHKsgA78B5yEfZ1-xId2YM4_G58
 
 ### Fish Create
 POST http://localhost:3000/fishes.json 
