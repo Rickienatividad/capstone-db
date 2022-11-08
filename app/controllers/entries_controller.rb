@@ -54,8 +54,11 @@ class EntriesController < ApplicationController
 
   def destroy
     entry = Entry.find_by(id: params["id"])
-
-    entry.delete
-    render json: { message: "entry deleted" }
+    if current_user && current_user.id == entry.user_id
+      entry.delete
+      render json: { message: "entry deleted" }
+    else
+      render json: { message: "you are not authorized to delete this entry." }
+    end
   end
 end

@@ -16,7 +16,7 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "test2@test.com",
+  "email": "test@test.com",
   "password": "password"
 }
 
@@ -55,7 +55,8 @@ Content-Type: application/json
 }
 
 ### Entries Destroy
-DELETE http://localhost:3000/entries/8.json
+DELETE http://localhost:3000/entries/9.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjgwMTcwMDB9.PgO5n6osqfzFGP1mcHKsgA78B5yEfZ1-xId2YM4_G58
 
 ### FISH
 ### Fish Index
