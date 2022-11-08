@@ -102,6 +102,7 @@ Authorization: Bearer {{jwt}}
 
 ### Lure Index
 GET http://localhost:3000/lures.json 
+Authorization: Bearer {{jwt2}}
 
 ### Lure Show
 GET http://localhost:3000/lures/1.json 

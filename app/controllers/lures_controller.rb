@@ -1,7 +1,13 @@
 class LuresController < ApplicationController
+  before_action :authenticate_user
+
   def index
-    lures = Lure.all
-    render json: lures.as_json
+    if current_user
+      lures = current_user.lures
+      render json: lures.as_json
+    else
+      render json: { message: "login to view your lures" }
+    end
   end
 
   def show
