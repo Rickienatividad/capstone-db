@@ -4,8 +4,8 @@ POST http://localhost:3000/users.json
 Content-Type: application/json
 
 {
-  "name": "test",
-  "email": "test@test.com",
+  "name": "test2",
+  "email": "test2@test.com",
   "password": "password",
   "password_confirmation": "password"
 }
@@ -16,7 +16,7 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "test@test.com",
+  "email": "test2@test.com",
   "password": "password"
 }
 
@@ -41,14 +41,15 @@ Content-Type: application/json
 }
 
 ### Entries Update
-PATCH http://localhost:3000/entries/8.json 
+PATCH http://localhost:3000/entries/9.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NjgwMTY2Mzh9.FKJ8YjQFPWvecj1ucqrbm2LCIzrrcHDg6jqt5EZQXlA
 Content-Type: application/json
 
 {
-  "user_id": 2,
-  "lure_id": 2,
+  "user_id": 1,
+  "lure_ids": 2,
   "location": "river",
-  "weather": "rainy",
+  "weather": "hot",
   "notes": "shit day",
   "date": 20210102
 }
