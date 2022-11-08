@@ -68,12 +68,12 @@ POST http://localhost:3000/fishes.json
 Content-Type: application/json
 
 {
-  "entry_id": 1,
+  "entry_id": 9,
   "user_id": 1,
   "lure_id": 1,
-  "species": "shark",
-  "length": 7,
-  "weight": 2
+  "species": "bluefin",
+  "length": 57,
+  "weight": 220
 }
 
 ### Fish Update
@@ -100,8 +100,8 @@ POST http://localhost:3000/lures.json
 Content-Type: application/json
 
 {
-  "entry_id": 1,
-  "user_id": 2,
-  "name": "rooster tail",
-  "color": "yellow"
+  "entry_id": 9,
+  "user_id": 1,
+  "name": "beetlespin",
+  "color": "black"
 }
