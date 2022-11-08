@@ -38,18 +38,21 @@ class FishesController < ApplicationController
 
   def update
     fish = Fish.find_by(id: params[:id])
+    if current_user && current_user.id == fish.user_id
+      fish.entry_id = params[:entry_id] || fish.entry_id
+      fish.user_id = params[:user_id] || fish.user_id
+      fish.lure_id = params[:lure_id] || fish.lure_id
+      fish.species = params[:species] || fish.species
+      fish.length = params[:length] || fish.length
+      fish.weight = params[:weight] || fish.weight
 
-    fish.entry_id = params[:entry_id] || fish.entry_id
-    fish.user_id = params[:user_id] || fish.user_id
-    fish.lure_id = params[:lure_id] || fish.lure_id
-    fish.species = params[:species] || fish.species
-    fish.length = params[:length] || fish.length
-    fish.weight = params[:weight] || fish.weight
-
-    if fish.save
-      render json: { message: "fish updated" }
+      if fish.save
+        render json: { message: "fish updated" }
+      else
+        render json: { error: fish.errors.full_messages }
+      end
     else
-      render json: { error: fish.errors.full_messages }
+      render json: { message: "Not authorized" }, status: :unauthorized
     end
   end
 

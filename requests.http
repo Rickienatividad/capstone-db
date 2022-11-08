@@ -1,3 +1,6 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjgwMTcwMDB9.PgO5n6osqfzFGP1mcHKsgA78B5yEfZ1-xId2YM4_G58
+@jwt2 = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NjgwMTY2Mzh9.FKJ8YjQFPWvecj1ucqrbm2LCIzrrcHDg6jqt5EZQXlA
+
 ### Users
 ### User Create
 POST http://localhost:3000/users.json 
@@ -82,11 +85,13 @@ Content-Type: application/json
 }
 
 ### Fish Update
-PATCH http://localhost:3000/fishes/1.json 
+PATCH http://localhost:3000/fishes/3.json 
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "species": "red breast"
+  "species": "smallmouth",
+  "entry_id": 10
 }
 
 ### Fish Destroy
