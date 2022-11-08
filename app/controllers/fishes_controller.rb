@@ -58,8 +58,11 @@ class FishesController < ApplicationController
 
   def destroy
     fish = Fish.find_by(id: params[:id])
-
-    fish.delete
-    render json: { message: "fish was deleted" }
+    if current_user && current_user.id == fish.user_id
+      fish.delete
+      render json: { message: "fish was deleted" }
+    else
+      render json: { message: "Not authorized to perform this action" }, status: :unauthorized
+    end
   end
 end

@@ -95,7 +95,8 @@ Content-Type: application/json
 }
 
 ### Fish Destroy
-DELETE http://localhost:3000/fishes/2.json 
+DELETE http://localhost:3000/fishes/3.json 
+Authorization: Bearer {{jwt}}
 
 ### LURES
 
