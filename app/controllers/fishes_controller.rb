@@ -23,7 +23,6 @@ class FishesController < ApplicationController
     fish = Fish.new(
       entry_id: params[:entry_id],
       user_id: params[:user_id],
-      lure_id: params[:lure_id],
       species: params[:species],
       length: params[:length],
       weight: params[:weight],
@@ -41,7 +40,6 @@ class FishesController < ApplicationController
     if current_user && current_user.id == fish.user_id
       fish.entry_id = params[:entry_id] || fish.entry_id
       fish.user_id = params[:user_id] || fish.user_id
-      fish.lure_id = params[:lure_id] || fish.lure_id
       fish.species = params[:species] || fish.species
       fish.length = params[:length] || fish.length
       fish.weight = params[:weight] || fish.weight
