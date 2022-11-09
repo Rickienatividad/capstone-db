@@ -1,0 +1,5 @@
+{
+  id: @entry.id,
+  created_at: @entry.created_at,
+  updated_at: @entry.updated_at
+}

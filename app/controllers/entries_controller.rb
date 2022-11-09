@@ -3,9 +3,9 @@ class EntriesController < ApplicationController
 
   def index
     if current_user
-      entries = current_user.entries
+      @entries = current_user.entries
 
-      render json: entries.as_json
+      render template: "entries/index"
     else
       render json: { message: "You can only view your own entries." }
     end

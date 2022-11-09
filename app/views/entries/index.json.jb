@@ -1,0 +1,10 @@
+@entries.map do |entry|
+  {
+    id: entry.id,
+    date: entry.date,
+    location: entry.location,
+    weather: entry.weather,
+    notes: entry.notes,
+    fish: entry.fish.all,
+  }
+end
