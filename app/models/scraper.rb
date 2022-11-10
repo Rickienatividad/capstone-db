@@ -41,6 +41,11 @@ class Scraper
 
       weight = doc.css("#leftcolumn").search("div")[1].search("p")[3].text
 
+      habits = doc.css("#leftcolumn").search("div")[3].css("ul").css("li").text
+
+      img_url = doc.css("#rightcolumn").at_css(".backwhite").css("a").first["href"]
+      img = "https://www.dnr.sc.gov/fish/species/#{img_url}"
+
       binding.pry
     end
   end
