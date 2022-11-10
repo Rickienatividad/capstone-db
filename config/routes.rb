@@ -29,4 +29,5 @@ Rails.application.routes.draw do
 
   #species
   get "/species" => "species#index"
+  get "/species/:id" => "species#show"
 end
