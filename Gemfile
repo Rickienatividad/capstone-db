@@ -49,3 +49,5 @@ end
 gem 'jwt'
 
 gem 'jb'
+gem 'httparty'
+gem 'nokogiri'
