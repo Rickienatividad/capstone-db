@@ -1,6 +1,6 @@
 require "nokogiri"
 require "httparty"
-require "pry"
+# require "pry"
 
 class Scraper
   def scrape_species_urls
@@ -60,8 +60,6 @@ class Scraper
       fresh_species << species_info
     end
     fresh_species
-
-    binding.pry
   end
 end
 
