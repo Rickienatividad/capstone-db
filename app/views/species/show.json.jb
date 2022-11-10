@@ -1,0 +1,5 @@
+{
+  id: @species.id,
+  created_at: @species.created_at,
+  updated_at: @species.updated_at
+}

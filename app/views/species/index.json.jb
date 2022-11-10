@@ -1,0 +1,10 @@
+@species.map do |species|
+  {
+    id: species.id,
+    name: species.name,
+    length: species.length,
+    weight: species.weight,
+    habits: species.habits,
+    img: species.img,
+  }
+end

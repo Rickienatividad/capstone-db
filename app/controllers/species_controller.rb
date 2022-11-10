@@ -1,7 +1,7 @@
 class SpeciesController < ApplicationController
   def index
-    species = Species.all
-    render json: species.as_json
+    @species = Species.all
+    render template: "species/index"
   end
 
   def show
