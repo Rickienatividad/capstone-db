@@ -11,10 +11,23 @@ class Scraper
 
     species_list = doc.css("#mainContent").css("ul").css("li").css("a")
 
+    species_array = []
+
     species_list.each do |specie|
+      #gets the actual url for each species
       url = specie.attributes["href"].value
-      binding.pry
+      species_array << url
     end
+
+    #removes links not associated with fish species
+    9.times do
+      species_array.pop
+    end
+
+    scrape_species_pages(species_array)
+  end
+
+  def scrape_species_pages(species_array)
   end
 end
 
