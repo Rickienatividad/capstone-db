@@ -28,6 +28,8 @@ class Scraper
   end
 
   def scrape_species_pages(species_array)
+    fresh_species = []
+
     species_array.each do |specie|
       url = "https://www.dnr.sc.gov/#{specie}"
       html = HTTParty.get(url)
@@ -46,8 +48,20 @@ class Scraper
       img_url = doc.css("#rightcolumn").at_css(".backwhite").css("a").first["href"]
       img = "https://www.dnr.sc.gov/fish/species/#{img_url}"
 
-      binding.pry
+      species_info = {
+        name: name,
+        description: description,
+        length: length,
+        weight: weight,
+        habits: habits,
+        img: img,
+      }
+
+      fresh_species << species_info
     end
+    fresh_species
+
+    binding.pry
   end
 end
 
