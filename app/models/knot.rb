@@ -1,0 +1,2 @@
+class Knot < ApplicationRecord
+end
