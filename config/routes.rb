@@ -30,4 +30,9 @@ Rails.application.routes.draw do
   #species
   get "/species" => "species#index"
   get "/species/:id" => "species#show"
+
+  #knots
+  get "/knots" => "knots#index"
+
+  get "/knots/:id" => "knots#show"
 end
