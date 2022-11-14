@@ -1,9 +1,9 @@
 require "httparty"
 require "nokogiri"
-require "pry"
 require "open-uri"
+# require "pry"
 
-class Ramp_scraper
+class RampScraper
   def scrape_lake_list
     url = "https://www.dnr.sc.gov/lakes/search.html"
     html = HTTParty.get(url)
@@ -62,19 +62,23 @@ class Ramp_scraper
   end
 
   def coordinates(boat_ramps_list)
+    ramp_info = []
+
     boat_ramps_list.each do |ramp|
       html = URI.open(ramp)
       doc = Nokogiri::HTML(html)
 
-      ramp_info = []
-
       latitude = doc.css("#leftcolumn").css("div")[2].text[/\Latitude: \d{2}\.\d{5}/]
-      latitude = latitude.split(" ")
-      latitude = latitude[1].to_f
+      if latitude != nil
+        latitude = latitude.delete "Latitude: "
+        latitude = latitude.to_f
+      end
 
       longitude = doc.css("#leftcolumn").css("div")[2].text[/\Longitude:\-\d{2}\.\d{5}/]
-      longitude = longitude.delete "Longitude:"
-      longitude = longitude.to_f
+      if longitude != nil
+        longitude = longitude.delete "Longitude:"
+        longitude = longitude.to_f
+      end
 
       name = doc.css("#leftcolumn").at_css("h1").text
 
@@ -85,11 +89,19 @@ class Ramp_scraper
       }
 
       ramp_info << ramp_facts
-      binding.pry
     end
+
+    ramp_info[2][:latitude] = 34.7359
+    ramp_info[5][:latitude] = 34.0896
+    ramp_info[6][:latitude] = 34.1831
+    ramp_info[6][:longitude] = -82.7022
+    ramp_info[7][:longitude] = -82.579
+    ramp_info[8][:latitude] = 33.8863
+    ramp_info[8][:longitude] = -82.3678
+    # binding.pry
     ramp_info
   end
 end
 
-ramp_scraper = Ramp_scraper.new
+ramp_scraper = RampScraper.new
 ramp_scraper.scrape_lake_list
