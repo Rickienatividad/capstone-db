@@ -57,12 +57,17 @@ class Ramp_scraper
       ramp_list = "https://www2.dnr.sc.gov/" + ramp_list
       boat_ramps_list << ramp_list
     end
-    binding.pry
+
     coordinates(boat_ramps_list)
   end
 
   def coordinates(boat_ramps_list)
     boat_ramps_list.each do |ramp|
+      html = URI.open(ramp)
+      doc = Nokogiri::HTML(html)
+
+      latitude = doc.css("#leftcolumn").css("div")[2].text[/\Latitude: \d{2}\.\d{5}/]
+      binding.pry
     end
   end
 end
