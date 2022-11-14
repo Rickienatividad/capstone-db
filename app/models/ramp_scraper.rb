@@ -43,7 +43,27 @@ class Ramp_scraper
     end
     link_list.delete_at(4)
     link_list.pop
+    boat_ramps(link_list)
+  end
+
+  def boat_ramps(link_list)
+    boat_ramps_list = []
+
+    link_list.each do |link|
+      html = URI.open(link)
+      doc = Nokogiri::HTML(html)
+      ramp_list = doc.css("table").css("tbody").css("td").css("a").attr("href").value
+
+      ramp_list = "https://www2.dnr.sc.gov/" + ramp_list
+      boat_ramps_list << ramp_list
+    end
     binding.pry
+    coordinates(boat_ramps_list)
+  end
+
+  def coordinates(boat_ramps_list)
+    boat_ramps_list.each do |ramp|
+    end
   end
 end
 
