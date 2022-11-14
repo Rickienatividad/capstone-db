@@ -66,9 +66,27 @@ class Ramp_scraper
       html = URI.open(ramp)
       doc = Nokogiri::HTML(html)
 
+      ramp_info = []
+
       latitude = doc.css("#leftcolumn").css("div")[2].text[/\Latitude: \d{2}\.\d{5}/]
+      latitude = latitude.split(" ")
+      latitude = latitude[1].to_f
+
+      longitude = doc.css("#leftcolumn").css("div")[2].text[/\Longitude:\-\d{2}\.\d{5}/]
+      longitude = longitude.delete "Longitude:"
+
+      name = doc.css("#leftcolumn").at_css("h1").text
       binding.pry
+
+      ramp_facts = {
+        name: name,
+        latitude: latitude,
+        longitude: longitude,
+      }
+
+      ramp_info << ramp_facts
     end
+    ramp_info
   end
 end
 
