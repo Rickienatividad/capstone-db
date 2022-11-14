@@ -74,9 +74,9 @@ class Ramp_scraper
 
       longitude = doc.css("#leftcolumn").css("div")[2].text[/\Longitude:\-\d{2}\.\d{5}/]
       longitude = longitude.delete "Longitude:"
+      longitude = longitude.to_f
 
       name = doc.css("#leftcolumn").at_css("h1").text
-      binding.pry
 
       ramp_facts = {
         name: name,
@@ -85,6 +85,7 @@ class Ramp_scraper
       }
 
       ramp_info << ramp_facts
+      binding.pry
     end
     ramp_info
   end
