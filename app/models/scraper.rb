@@ -14,7 +14,7 @@ class Scraper
     species_array = []
 
     species_list.each do |specie|
-      #gets the actual url for each species
+      #url for each species and pushes into array
       url = specie.attributes["href"].value
       species_array << url
     end
