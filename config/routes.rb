@@ -35,4 +35,7 @@ Rails.application.routes.draw do
   get "/knots" => "knots#index"
 
   get "/knots/:id" => "knots#show"
+
+  #Ramps
+  get "/ramps" => "ramps#index"
 end
