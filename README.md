@@ -1,24 +1,52 @@
-# README
+# Ruby on Reels
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the back-end component for a fishing utility app that gives users access to reference material such as images and habits of freshwater species of fish, knot tying instructions and examples, and a map depicting locations of public boat ramps in the state of South Carolina. Future features will allow the user to drop a marker on the map that associates with the location of their log entries.
+<strong>The repository for the front-end component of this application can be found</strong> [HERE](https://github.com/Rickienatividad/capstone-frontend) .
 
-Things you may want to cover:
+Technologies utilized to bring things to life:
 
-* Ruby version
+* Ruby version 3.1.1
 
-* System dependencies
+* Ruby on Rails
 
-* Configuration
+* Postgres
 
-* Database creation
+* HTTParty gem
 
-* Database initialization
+* Nokogiri gem
 
-* How to run the test suite
+* Pry
 
-* Services (job queues, cache servers, search engines, etc.)
+* Open-URI
 
-* Deployment instructions
+## Installation
 
-* ...
+From the terminal, cd into your desired directory and use the following command to clone down the app:
+```bash
+git clone https://github.com/Rickienatividad/capstone-db.git
+```
+
+cd into the project.
+
+Next access the ability to use all the gems and features by doing a bundle install:
+```bash
+rails bundle install
+```
+
+Create your database and migrate it:
+```bash
+rails db:create
+rails db:migrate
+```
+If wanted, you can populate your database with ready made data by running:
+```bash
+rails db:seed
+```
+
+## Gems and Tools Used and Explanations
+* HTTParty - This gem was used in the scraper.rb, knot_scraper.rb, and ramp_scraper.rb files to perform GET requests on various urls that to return HTML string data. These strings were then utilized by the next gem noted (Nokogiri).
+* Nokogiri - This gem took the string returned by HTTParty and creates Nokogiri nodes which can be targeted via css or xml properties. Using this targeted information allowed specific information to be scraped and eventually populated into the database.
+* Pry - This was used throughout the scraping process to debug and view arrays as they were being built to ensure the correct information was being gathered.
+* Open-URI - This was used interchangeably with HTTParty to perform GET requests.
+
+
