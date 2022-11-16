@@ -1,6 +1,6 @@
 # Ruby on Reels
 
-This is the back-end component for a fishing utility app that gives users access to reference material such as images and habits of freshwater species of fish, knot tying instructions and examples, and a map depicting locations of public boat ramps in the state of South Carolina. Future features will allow the user to drop a marker on the map that associates with the location of their log entries.
+This is the back-end component for a fishing utility app that gives users access to reference material such as images and habits of freshwater species of fish, knot tying instructions and examples, and a map depicting locations of public boat ramps in the state of South Carolina. Future features will allow the user to drop a marker on the map that associates with the location of their log entries. Information for the knots, fish species, and boat ramp coordinates were scraped from various websites utilizing Ruby gems. 
 <strong>The repository for the front-end component of this application can be found</strong> [HERE](https://github.com/Rickienatividad/capstone-frontend) .
 
 Technologies utilized to bring things to life:
