@@ -4,7 +4,7 @@ require "httparty"
 
 class Scraper
   def scrape_species_urls
-    #base url for list of species
+    #url path for list of species
     dnr_list = "https://www.dnr.sc.gov/freshwater.html"
     html = HTTParty.get(dnr_list)
     doc = Nokogiri::HTML(html)
